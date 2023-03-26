@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Rubik+Iso&family=Single+Day&family=Tilt+Prism&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <title>CALCULADORA :3</title>
+</head>
+
+<body>
+    <div class="contenedor-principal">
+        <h1>CALCULADORA COMPLEX</h1>
+        <div class="barras-ingrese">
+            <div class="barra-1">
+                <input pattern="\d+" type="text" value="" id="valorestext" placeholder="INGRESE VALORES O TEXTOS.....">
+                <span class="error" id="mensaje-serie"></span>
+            </div>
+            <div class="barra-1">
+                <input pattern="\d+" type="text" value="" id="valor2" placeholder="INGRESE VALORES O TEXTOS.....">
+                <span class="error" id="mensaje-valor"></span>
+            </div>
+            <div class="resultado">
+                <textarea id="resp" rows="1" placeholder="TU RESPUESTA SE MOSTRARA AQUÍ!!......"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <!--BOTONES QUE HACEN LAS ACCCIONES-->
+    <div class="botones-ejecuciones">
+        <div class="fila-botones">
+            <button class="grupos" id="" onclick="cal.base10_2()">Base 10 a 2</button>
+            <button class="grupos" id="" onclick="cal.base10_8()">Base 10 a 8</button>
+            <button class="grupos" id="" onclick="cal.base10_16()">Base 10 a 16</button>
+            <button class="grupos" id="" onclick="cal.base2_10()">Base 2 a 10</button>
+            <button class="grupos" id="" onclick="cal.base2_16()">Base 2 a 16</button>
+            <button class="grupos" id="" onclick="cal.base2_8()">Base 2 a Base 8</button>
+        </div>
+
+        <div class="fila-botones">
+            <button class="grupos" id="" onclick="cal.darVuelto()">Dar Vuelto</button>
+            <button class="grupos" id="" onclick="cal.romano()">Conversion a Romano</button>
+            <button class="grupos" id="" onclick="cal.busca_cadena()">Buscar cadena</button>
+            <button class="grupos" id="" onclick="cal.mayor_elemento()">Mayor Elemento Arreglo</button>
+        </div>
+
+        <!--BOTONES EN MEDIO-->
+        <div class="container-botonmedio">
+            <form>
+                <div class="boton-medio">
+
+                    <label for="base2" min="2" max="16">Base de destino:</label>
+                    <input type="number" id="base2" name="basedestino" placeholder="INGRESE BASE...">
+
+                    <label for="base2" min="2" max="16">Base de inicio:</label>
+                    <input type="number" id="base1" name="basedestino" placeholder="INGRESE BASE...">
+
+                    <label for="numero">Número:</label>
+                    <input type="text" id="numero" name="numero" placeholder="INGRESE NUMERO.....">
+                    <div class="boton-centr">
+                    </div>
+                    <div id="error-msg"></div>
+                </div>
+            </form>
+        </div>
+
+        <!--CIERRE-->
+
+        <div class="fila-botones">
+            <button class="grupos" onclick="cal.convertirBase(); return validar (); ">Convertir Base-N a Base-N</button>
+            <button class="grupos" id="" onclick="cal.menor_elemento()">Menor Elemento Arreglo</button>
+            <button class="grupos" id="" onclick="cal.buscaArreglo()">BuscarArreglo</button>
+            <button class="grupos" id="" onclick="cal.elimina_elemento()">Eliminar Elemento Arreglo</button>
+            <button class="grupos" id="" onclick="cal.inserta_elemento()">Insertar Elemento Arreglo</button>
+        </div>
+
+        <div class="fila-botones">
+            <button class="grupos" id="" onclick="cal.cadena_arreglo()">Cadena a Arreglo</button>
+            <button class="grupos" id="" onclick="cal.arreglo_cadena()">Arreglo a Cadena</button>
+            <button class="grupos" id="" onclick="cal.arreglo_palabras()">Arreglo a Cadena</button>
+            <button class="grupos" id="" onclick="cal.cont_caracteres()">Cantidad Caracteres especiales</button>
+        </div>
+
+        <div class="fila-botones">
+            <button class="grupos" id="" onclick="cal.suma_digitos()">Sumar digitos con Cadenas</button>
+        </div>
+
+    </div>
+
+
+    <div colspan="5" class="boton-limpieza" id="clear">
+        <button class="ac" type="reset" id="btn-limpiar" oneclick="cal.limpiar()">Limpiar</button>
+    </div>
+</body>
+<script src="/js/script.js"></script>
+
+</html>
